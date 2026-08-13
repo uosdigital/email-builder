@@ -1,0 +1,394 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force layout fixes for email builder */
+.email-builder-canvas {
+  flex: 1 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.email-builder-canvas-container {
+  width: 100% !important;
+  max-width: 64rem !important;
+  margin: 0 auto !important;
+}
+
+/* Ensure proper sticky positioning for sidebars */
+.sticky.top-0.h-screen {
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+}
+
+/* ComponentPalette scrolling fixes */
+.w-40.flex-shrink-0.overflow-y-auto {
+  height: 100% !important;
+  max-height: 100vh !important;
+}
+
+/* 16:9 Aspect Ratio Support */
+.aspect-ratio-16-9 {
+  aspect-ratio: 16/9 !important;
+}
+
+/* Force 16:9 aspect ratio for content cards and two-column cards in all contexts */
+[style*="aspectRatio: 16/9"] {
+  aspect-ratio: 16/9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* Specific enforcement for content card image containers */
+[data-content-card-image-drop-area] {
+  aspect-ratio: 16/9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  width: 100% !important;
+}
+
+/* Force aspect ratio with higher specificity for content cards */
+div[data-content-card-image-drop-area] {
+  aspect-ratio: 16/9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure flex containers don't interfere with aspect ratio */
+.flex[style*="flexDirection: column"]>div[data-content-card-image-drop-area] {
+  aspect-ratio: 16/9 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+}
+
+/* Additional fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+  [style*="aspectRatio: 16/9"] {
+    position: relative;
+    width: 100%;
+  }
+
+  [style*="aspectRatio: 16/9"]::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio (9/16 = 0.5625) */
+  }
+
+  [style*="aspectRatio: 16/9"]>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  [data-content-card-image-drop-area] {
+    position: relative;
+    width: 100%;
+  }
+
+  [data-content-card-image-drop-area]::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio (9/16 = 0.5625) */
+  }
+
+  [data-content-card-image-drop-area]>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+  .aspect-ratio-16-9 {
+    position: relative;
+    width: 100%;
+  }
+
+  .aspect-ratio-16-9::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio (9/16 = 0.5625) */
+  }
+
+  .aspect-ratio-16-9>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Ensure Quill tooltip (hyperlink pop-up) is always visible with higher z-index */
+.ql-tooltip {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+.ql-tooltip.ql-editing {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+/* Ensure Quill container doesn't clip tooltips */
+.ql-container {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 1000;
+}
+
+.ql-editor {
+  overflow: visible !important;
+}
+
+/* Remove Quill font dropdown and header options since we're using our own */
+.ql-font,
+.ql-header {
+  display: none !important;
+}
+
+/* Custom cursor for draggable components */
+[draggable="true"] {
+  cursor: move;
+}
+
+[draggable="true"]:hover {
+  cursor: move;
+}
+
+/* Ensure property editor and all its parents allow overflow */
+.property-editor,
+.property-editor * {
+  overflow: visible !important;
+}
+
+/* But keep scrolling for the main content area */
+.property-editor .h-full.overflow-y-auto {
+  overflow-y: auto !important;
+  overflow-x: visible !important;
+}
+
+/* Remove repetitive scrollbars in property editor */
+.property-editor .overflow-y-auto {
+  overflow-y: auto !important;
+  overflow-x: visible !important;
+}
+
+.property-editor .space-y-8 {
+  overflow: visible !important;
+}
+
+/* Make sure tooltips appear above everything */
+.tooltip {
+  z-index: 99999 !important;
+}
+
+/* Ensure Quill tooltip is properly positioned and visible */
+.ql-tooltip {
+  z-index: 9999 !important;
+  position: fixed !important;
+  overflow: visible !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+.ql-tooltip.ql-editing {
+  z-index: 9999 !important;
+  position: fixed !important;
+  overflow: visible !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+/* Banner styles for 580px width */
+.banner-container {
+  width: 580px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.banner-container img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Ensure banner images maintain aspect ratio */
+img[style*="width: 580px"] {
+  width: 580px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.ql-rich-text-preview ol,
+.ql-rich-text-preview ul {
+  margin-left: 1.5em;
+  padding-left: 1.5em;
+}
+
+.ql-rich-text-preview ol {
+  list-style-type: decimal;
+}
+
+.ql-rich-text-preview ul {
+  list-style-type: disc;
+}
+
+/* Prevent Quill editor/tooltips from overlapping modal preview */
+.force-mobile .ql-editor,
+.force-mobile .ql-tooltip,
+.force-mobile .ql-container {
+  z-index: 1 !important;
+  position: static !important;
+}
+
+.modal-preview .ql-container {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.modal-preview .ql-tooltip {
+  display: none !important;
+}
+
+body.modal-preview-open .ql-tooltip {
+  display: none !important;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-preview {
+  position: relative;
+  z-index: 1001;
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.property-editor,
+.sidebar {
+  z-index: 900 !important;
+}
+
+.ql-tooltip,
+.ql-tooltip.ql-editing {
+  z-index: 1000 !important;
+  position: absolute !important;
+}
+
+.modal-preview {
+  z-index: 1001 !important;
+}
+
+.modal-preview-desktop {
+  max-width: 900px;
+  min-width: 600px;
+  width: 100%;
+}
+
+.modal-preview-mobile {
+  max-width: 900px;
+  min-width: 600px;
+  width: 100%;
+}
+
+/* Ensure aspect ratio is maintained in modal preview */
+.modal-preview [style*="aspectRatio: 16/9"] {
+  aspect-ratio: 16/9 !important;
+}
+
+.force-mobile [style*="aspectRatio: 16/9"] {
+  aspect-ratio: 16/9 !important;
+}
+
+/* Ensure content card containers don't interfere with aspect ratio */
+.rounded-lg[style*="margin: 4px 0"] {
+  overflow: visible !important;
+}
+
+.rounded-lg[style*="margin: 4px 0"]>div {
+  overflow: visible !important;
+}
+
+/* Mobile title font sizes for content cards and two-columns cards */
+.modal-preview-mobile .content-card-title,
+.modal-preview-mobile .two-columns-title,
+.force-mobile .content-card-title,
+.force-mobile .two-columns-title {
+  font-size: 16px !important;
+}
+
+/* Mobile font size adjustments for modal preview */
+.modal-preview-mobile .ql-rich-text-preview,
+.force-mobile .ql-rich-text-preview {
+  font-size: 14px !important;
+}
+
+.modal-preview-mobile .ql-editor,
+.force-mobile .ql-editor {
+  font-size: 14px !important;
+}
+
+.modal-preview-mobile p,
+.force-mobile p {
+  font-size: 14px !important;
+}
+
+/* Property editor sticky positioning */
+.property-editor.sticky {
+  position: sticky !important;
+  top: 0 !important;
+  height: 100vh !important;
+  overflow-y: auto !important;
+}
+
+/* Additional bottom space for canvas */
+.email-builder-canvas {
+  padding-bottom: 2rem !important;
+}
+
+/* Ensure proper height for sticky containers */
+.sticky.top-0.h-screen>div {
+  height: 100% !important;
+}
+
+/* Ensure the main app container doesn't clip tooltips - removed to allow canvas scrolling */
