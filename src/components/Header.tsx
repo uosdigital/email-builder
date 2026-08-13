@@ -152,8 +152,8 @@ const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-2 cursor-pointer" onClick={onToggleDashboard}>
-              <FilePenLine className="w-8 h-8 text-[#440099] ml-3" />
-              <h1 className="font-semibold text-grey-800 px-2" style={{ fontFamily: 'Courier Prime, monospace', fontSize: '1.6rem' }}>Email Builder</h1>
+              <img src="icon128.png" alt="University of Sheffield" className="h-8 w-auto ml-3"/>
+              <h1 className="font-semibold text-grey-800 px-2" style={{ fontFamily: 'source-serif-pro', fontSize: '1.6rem' }}>UoS Email Builder</h1>
             </div>
             <div className="h-6 w-px bg-grey-300 mx-4" />
             <div className="flex items-center space-x-2">
