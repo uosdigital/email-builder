@@ -590,7 +590,7 @@ const EmailComponentRenderer: React.FC<EmailComponentRendererProps> = ({ compone
             </p>
             <p style={{
               color: '#333',
-              fontSize: '15px',
+              fontSize: '16px',
               margin: 0,
               marginBottom: '10px',
               fontFamily: 'Source Sans 3, sans-serif'
@@ -863,7 +863,7 @@ const EmailComponentRenderer: React.FC<EmailComponentRendererProps> = ({ compone
                 <div style={{ padding: '0px 16px', marginTop: '16px', marginBottom: '16px' }}>
                   <p style={{
                     color: '#333',
-                    fontSize: isMobileView ? '16px' : '20px',
+                    fontSize: isMobileView ? '16px' : '18px',
                     fontWeight: 600,
                     margin: 0,
                     marginBottom: '8px',
@@ -877,7 +877,7 @@ const EmailComponentRenderer: React.FC<EmailComponentRendererProps> = ({ compone
                     style={{
                       fontFamily: 'Source Sans 3, sans-serif',
                       color: '#333',
-                      fontSize: '14px',
+                      fontSize: '16px',
                       margin: 0,
                       marginBottom: '10px'
                     }}
@@ -1062,7 +1062,7 @@ const EmailComponentRenderer: React.FC<EmailComponentRendererProps> = ({ compone
                 <div style={{ padding: '0px 16px', marginTop: '16px', marginBottom: '16px' }}>
                   <p style={{
                     color: '#333',
-                    fontSize: isMobileView ? '16px' : '20px',
+                    fontSize: isMobileView ? '16px' : '18px',
                     fontWeight: 600,
                     margin: 0,
                     marginBottom: '8px',
@@ -1076,7 +1076,7 @@ const EmailComponentRenderer: React.FC<EmailComponentRendererProps> = ({ compone
                     style={{
                       fontFamily: 'Source Sans 3, sans-serif',
                       color: '#333',
-                      fontSize: '14px',
+                      fontSize: '16px',
                       margin: 0,
                       marginBottom: '10px'
                     }}

@@ -33,16 +33,16 @@ if (typeof window !== 'undefined' && !document.getElementById('quill-custom-styl
   style.id = 'quill-custom-styles';
   style.innerHTML = `
     .ql-editor {
-      font-size: 15px !important;
+      font-size: 16px !important;
       color: #333333 !important;
     }
     .ql-editor.ql-blank::before {
-      font-size: 15px !important;
+      font-size: 16px !important;
       color: #9ca3af !important;
       font-style: normal !important;
     }
     .ql-editor p {
-      font-size: 15px !important;
+      font-size: 16px !important;
       color: #333333 !important;
     }
     .ql-editor.ql-blank::before {
